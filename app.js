@@ -1,47 +1,48 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
 
-let amigos = [];
+let friends = [];
 
-function agregarAmigo ()
+function addFriend ()
 {
-    const nuevoAmigo = document.getElementById("amigo").value;
+    const newFriend = document.getElementById("friend").value;
 
-    if (nuevoAmigo === "")
+    if (newFriend === "")
     {
         alert("Debe ingresar un nombre");
 
         return;
     }
 
-    amigos.push(nuevoAmigo);
+    friends.push(newFriend);
 
-    document.getElementById("amigo").value = "";
+    document.getElementById("friend").value = "";
 
-    document.getElementById("amigo").focus();
+    document.getElementById("friend").focus();
 
-    actualizarAmigos();
+    updateFriends();
 }
 
-function actualizarAmigos ()
+function updateFriends ()
 {
-    const listaAmigos = document.getElementById("listaAmigos");
+    const friendList = document.getElementById("friend-list");
 
-    listaAmigos.innerHTML = "";
+    friendList.innerHTML = "";
 
-    for (let amigo of amigos)
+    for (let amigo of friends)
     {
         const item = document.createElement("li");
 
         item.textContent = amigo;
 
-        listaAmigos.appendChild(item);
+        friendList.appendChild(item);
     }
 }
 
-function sortearAmigo ()
+function sortFriend ()
 {
-    const indiceAleatorio = Math.floor(Math.random() * amigos.length);
-    const amigoSorteado = amigos[indiceAleatorio];
+    const randomIndex = Math.floor(Math.random() * friends.length);
 
-    document.getElementById("resultado").innerHTML = amigoSorteado;
+    const sortedFriend = friends[randomIndex];
+
+    document.getElementById("result").innerHTML = sortedFriend;
 }
