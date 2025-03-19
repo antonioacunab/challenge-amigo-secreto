@@ -2,6 +2,9 @@
 
 let friends = [];
 
+/**
+ * Adds a friend to the friends list
+ */
 function addFriend ()
 {
     const newFriend = document.getElementById("friend").value;
@@ -22,6 +25,9 @@ function addFriend ()
     updateFriends();
 }
 
+/**
+ * Updates the friends list
+ */
 function updateFriends ()
 {
     const friendList = document.getElementById("friend-list");
@@ -38,6 +44,9 @@ function updateFriends ()
     }
 }
 
+/**
+ * Get a random friends from the friends list
+ */
 function sortFriend ()
 {
     const randomIndex = Math.floor(Math.random() * friends.length);
