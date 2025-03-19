@@ -18,4 +18,30 @@ function agregarAmigo ()
     document.getElementById("amigo").value = "";
 
     document.getElementById("amigo").focus();
+
+    actualizarAmigos();
+}
+
+function actualizarAmigos ()
+{
+    const listaAmigos = document.getElementById("listaAmigos");
+
+    listaAmigos.innerHTML = "";
+
+    for (let amigo of amigos)
+    {
+        const item = document.createElement("li");
+
+        item.textContent = amigo;
+
+        listaAmigos.appendChild(item);
+    }
+}
+
+function sortearAmigo ()
+{
+    const indiceAleatorio = Math.floor(Math.random() * amigos.length);
+    const amigoSorteado = amigos[indiceAleatorio];
+
+    document.getElementById("resultado").innerHTML = amigoSorteado;
 }
